@@ -48,8 +48,8 @@ export const Header = ({
       {navigationVisible &&
         <Icon onPress={onPressBack} content={back} />
       }
-      <BackgroundProgress content={contentType} ref={backgroundProgressRefOnChange} />
-      <View style={styles.body}>
+      {/* <BackgroundProgress content={contentType} ref={backgroundProgressRefOnChange} /> */}
+      {/* <View style={styles.body}>
         <Text
           numberOfLines={1}
           style={[
@@ -66,10 +66,10 @@ export const Header = ({
         <Text numberOfLines={1} style={[styles.subtitle]}>
           {url}
         </Text>
-      </View>
-      {navigationVisible &&
+      </View> */}
+      {/* {navigationVisible &&
         <Icon onPress={onPressForward} content={forward} />
-      }
+      } */}
       {/* <View>
         <CutomMenu
           extraMenuItems={extraMenuItems}
