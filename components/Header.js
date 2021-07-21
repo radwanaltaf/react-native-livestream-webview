@@ -42,7 +42,7 @@ export const Header = ({
     <View
       style={[
         styles.container,
-        { backgroundColor: 'transparent' },
+        { backgroundColor: 'green' },
       ]}>
       <Icon onPress={onPressClose} content={contentType === 'light' ? images.closeLight : images.closeDark} icon={closeIcon} />
       {navigationVisible &&
