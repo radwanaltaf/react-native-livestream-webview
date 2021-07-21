@@ -1,31 +1,8 @@
-<p>
-  <a href="https://github.com/ilkerkesici/react-native-beauty-webview/blob/master/README.tr.md">
-    <img alt="Build Status" src="https://img.shields.io/static/v1?label=dil&message=tr&color=yellow" target="_blank" />
- </a>
-  <a href="https://yarnpkg.com/package/react-native-beauty-webview">
-    <img alt="Documentation" src="https://img.shields.io/static/v1?label=pack&message=yarn&color=blue" target="_blank" />
-  </a>
-  <a href="https://www.npmjs.com/package/react-native-beauty-webview">
-    <img alt="Documentation" src="https://img.shields.io/static/v1?label=pack&message=npm&color=red" target="_blank" />
-  </a>
-</p>
-
-# React Native Beauty Webview for easy usage
+# React Native LiveStream Webview for easy usage
 ## :star2: Features
 - Easy usage
 - Easy to configure
 - Beauty UI
-- Default click and copy url
-- Open on browser
-- See title of website on header
-- Navigation
-
-## :star: Screenshot
-
-![](./assets/ios.gif)
-![](./assets/android.gif)
-![](./assets/video_2.gif)
-![](./assets/video_3.gif)
 
 ## :arrow_down: Installation
 
@@ -66,100 +43,13 @@ $ cd ios && pod install
 #### Install our package
 ```sh
 
-$ yarn add react-native-beauty-webview
+$ yarn add react-native-livestream-webview
 
 or
 
-$ npm install --save react-native-beauty-webview
+$ npm install --save react-native-livestream-webview
 
 ```
-
-## :flashlight: Example Usage
-```sh
-import React, {useState} from 'react';
-import {
-  StyleSheet,
-  View,
-  TouchableOpacity,
-  Text,
-} from 'react-native';
-import BeautyWebView from 'react-native-beauty-webview';
-
-const App = () => {
-  const [visible, setVisible] = useState(false);
-  const onButtonPress = () => {
-    setVisible(true);
-  };
-
-  return (
-      <View style={styles.container}>
-        <BeautyWebView
-          visible={visible} // Reguired for open and close
-          onPressClose={() => setVisible(false)} // Reguired for closing the modal
-          url={'https://github.com/'}
-          extraMenuItems={[
-            {
-              title: 'Extra Item',
-              onPress: () => console.log('Extra Menu Item Clicked'),
-            },
-          ]}
-        />
-        <TouchableOpacity style={styles.button} onPress={onButtonPress}>
-          <Text style={styles.text}>Open</Text>
-        </TouchableOpacity>
-      </View>
-  );
-};
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-  },
-  button: {
-    alignSelf: 'stretch',
-    justifyContent: 'center',
-    alignItems: 'center',
-    padding: 8,
-    backgroundColor: '#2196f3',
-    marginHorizontal: 20,
-  },
-  text: {
-    color: '#fff',
-    fontSize: 16,
-  },
-});
-
-export default App;
-
-
-```
-## :paperclip: Config
-
-| Params | Type | Default | Required | Description |
-| --- | --- | --- | --- | --- |
-| visible | boolean | false | YES | Visibility of modal |
-| onPressClose | function | - | YES | Run on press the close button (You must set visibilty as false) |  
-| url | string | - | YES | URL of the website |
-| backgroundColor | string | #fff | - | Background color of view |
-| headerContent | 'dark' or 'light' | 'dark' | - | Content type of header items like icons |
-| headerBackground | string | #fff | - | Background of header |
-| progressColor | string | #2196f3 | - | Color of the progress bar |
-| loadingText | string | 'Loading...' | - | Text of the loading |
-| copyLinkTitle | string | 'Copy Link' | - | Text of the copy menu item |
-| openBrowserTitle | string | 'Open on Browser' | - | Text of the opening on bowser menu item |
-| extraMenuItems | Array | - | - | Extra menu items, you can see detail on usage part on above |
-| animationType | 'slide' or 'fade' | 'slide' | - | Animation type of modal |
-| progressBarType | 'normal' or 'background' | 'normal' | - | Progress bar type |
-| onLoadEnd | func | - | - | Run at end of the loading |
-| onLoadStart | func | - | - | Run before start loading |
-| navigationVisible | boolean | true| - | Show navigation buttons |
-| closeIcon | Component | - | - | Close icon of header |
-| menuIcon | Component | - | - | Menu icon of header |
-| onGoBack | func | - | - | Run at going back |
-| onGoForward | func | - | - | Run at going forward |
-
-
 
 ## :warning: Dependency
 ### @react-native-community/react-native-webview
