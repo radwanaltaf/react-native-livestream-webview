@@ -45,7 +45,7 @@ export const Header = ({
       //   { backgroundColor: 'rgba(52, 52, 52, 0.1)' },
       // ]}
       >
-      <Icon onPress={onPressClose} content={contentType === 'light' ? images.closeLight : images.closeDark} icon={closeIcon} />
+      <Icon onPress={onPressClose} content={images.closeLight} icon={closeIcon} />
       {navigationVisible &&
         <Icon onPress={onPressBack} content={back} />
       }
