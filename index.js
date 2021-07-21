@@ -84,7 +84,7 @@ const BeautyWebView = ({
   return (
     <Modal visible={visible} transparent={false} animationType={animationType}>
       <SafeAreaView style={[styles.container, { backgroundColor: backgroundColor }]}>
-        <Header
+        {/* <Header
           backgroundColor={headerBackground}
           contentType={headerContent}
           title={title}
@@ -101,7 +101,7 @@ const BeautyWebView = ({
           onPressForward={onPressForward}
           closeIcon={closeIcon}
           menuIcon={menuIcon}
-        />
+        /> */}
         {
           progressBarType === 'normal' &&
           <Progress
