@@ -40,10 +40,11 @@ export const Header = ({
   else forward = images.forwardDark
   return (
     <View
-      style={[
-        styles.container,
-        { backgroundColor: 'rgba(52, 52, 52, 0.1)' },
-      ]}>
+      // style={[
+      //   styles.container,
+      //   { backgroundColor: 'rgba(52, 52, 52, 0.1)' },
+      // ]}
+      >
       <Icon onPress={onPressClose} content={contentType === 'light' ? images.closeLight : images.closeDark} icon={closeIcon} />
       {navigationVisible &&
         <Icon onPress={onPressBack} content={back} />
