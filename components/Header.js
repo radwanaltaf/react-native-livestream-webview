@@ -109,10 +109,13 @@ const styles = StyleSheet.create({
     borderBottomWidth: 1,
   },
   iconButton: {
-    width: 40,
-    height: 40,
+    position: 'absolute',
+    right: 15,
+    top: 15,
+    zIndex: 999,
+    width: '100%',
     justifyContent: 'center',
-    alignItems: 'center',
+    alignItems: 'flex-end',
   },
   icon: {
     width: 20,

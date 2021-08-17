@@ -102,14 +102,14 @@ const BeautyWebView = ({
           closeIcon={closeIcon}
           menuIcon={menuIcon}
         />
-        {
+        {/* {
           progressBarType === 'normal' &&
           <Progress
             height={progressHeight}
             color={progressColor}
             ref={(progress) => setProgressRef(progress)}
           />
-        }
+        } */}
         <WebView
           originWhitelist={['*']}
           source={{ uri: currentUrl }}
