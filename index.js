@@ -13,6 +13,7 @@ const BeautyWebView = ({
   headerBackground, // default #fff
   url, // Required
   customInjectedJS,
+  onMessageData,
   progressColor,
   progressHeight,
   loadingText,
@@ -120,7 +121,7 @@ const BeautyWebView = ({
           // injectedJavaScript="window.ReactNativeWebView.postMessage(document.title)"
           injectedJavaScript={customInjectedJS}
           javaScriptEnabled={true}
-          onMessage={event => setTitle(event.nativeEvent.data)}
+          onMessage={onMessageData}
           onLoadEnd={onLoadEnd}
           onLoadStart={onLoadStart}
           allowFileAccess={true}
