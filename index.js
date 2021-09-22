@@ -44,6 +44,7 @@ const BeautyWebView = ({
   };
 
   const onNavigationStateChange = (event) => {
+    setinjectedJS(customInjectedJS)
     if (currentUrl === event.url) return;
     backQueue.push(currentUrl);
     setBackQueue(backQueue);
@@ -119,7 +120,7 @@ const BeautyWebView = ({
             onProgress(loadingProgress);
           }}
           // injectedJavaScript="window.ReactNativeWebView.postMessage(document.title)"
-          injectedJavaScript={customInjectedJS}
+          injectedJavaScript={injectedJS}
           javaScriptEnabled={true}
           onMessage={onMessageData}
           onLoadEnd={onLoadEnd}
