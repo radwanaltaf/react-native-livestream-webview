@@ -40,47 +40,14 @@ export const Header = ({
   else forward = images.forwardDark
   return (
     <View
-      // style={[
-      //   styles.container,
-      //   { backgroundColor: 'rgba(52, 52, 52, 0.1)' },
-      // ]}
+      style={[
+        styles.container,
+      ]}
       >
-      <Icon onPress={onPressClose} content={images.closeLight} icon={closeIcon} />
-      {navigationVisible &&
-        <Icon onPress={onPressBack} content={back} />
-      }
-      {/* <BackgroundProgress content={contentType} ref={backgroundProgressRefOnChange} /> */}
-      {/* <View style={styles.body}>
-        <Text
-          numberOfLines={1}
-          style={[
-            styles.title,
-            {
-              color:
-                contentType === 'light'
-                  ? colors.defaultBackground
-                  : colors.dark,
-            },
-          ]}>
-          {title}
-        </Text>
-        <Text numberOfLines={1} style={[styles.subtitle]}>
-          {url}
-        </Text>
-      </View> */}
-      {/* {navigationVisible &&
-        <Icon onPress={onPressForward} content={forward} />
-      } */}
-      {/* <View>
-        <CutomMenu
-          extraMenuItems={extraMenuItems}
-          contentType={contentType}
-          openBrowserTitle={openBrowserTitle}
-          copyLinkTitle={copyLinkTitle}
-          url={url}
-          menuIcon={menuIcon}
-        />
-      </View> */}
+      <Icon
+      onPress={onPressClose}
+      content={images.closeLight}
+      icon={closeIcon} />
     </View>
   );
 };
@@ -100,26 +67,35 @@ const Icon = ({ onPress, content, icon }) => {
 
 const styles = StyleSheet.create({
   container: {
-    alignSelf: 'stretch',
-    height: Platform.OS == 'android' ? 50 : 60,
-    zIndex: 1,
+    display: 'flex',
     flexDirection: 'row',
     alignItems: 'flex-end',
-    borderBottomColor: colors.lightGray,
-    borderBottomWidth: 1,
+    alignSelf: 'stretch',
+    // height: Platform.OS == 'android' ? 50 : 30,
+    zIndex: 1,
   },
   iconButton: {
     position: 'absolute',
     right: 15,
     top: 15,
+    width: 32,
+    height: 32,
+    // position: Platform.OS == 'android' ? 'absolute' : 'relative',
+    // top: Platform.OS == 'android' ? 15 : 0,
     zIndex: 999,
-    width: '100%',
+    // width: '100%',
     justifyContent: 'center',
     alignItems: 'flex-end',
+    backgroundColor: 'black',
+    borderRadius: 20,
+    padding: 5,
+    
   },
   icon: {
     width: 20,
     height: 20,
+    padding: 0,
+    margin: 0
   },
   body: {
     height: 40,

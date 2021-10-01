@@ -128,6 +128,8 @@ const BeautyWebView = ({
           allowFileAccess={true}
           onNavigationStateChange={onNavigationStateChange}
           domStorageEnabled={true}
+          allowsInlineMediaPlayback={true}
+
         />
       </SafeAreaView>
     </Modal>
