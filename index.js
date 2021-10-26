@@ -12,6 +12,7 @@ const BeautyWebView = ({
   headerContent, // 'dark' || 'light', default 'dark'
   headerBackground, // default #fff
   url, // Required
+  customObject,
   customInjectedJS,
   onMessageData,
   progressColor,
@@ -37,8 +38,10 @@ const BeautyWebView = ({
   const [forwardQueue, setForwardQueue] = useState([]);
   const [currentUrl, setCurrentUrl] = useState(url);
   const [injectedJS, setinjectedJS] = useState(customInjectedJS);
+  const [customObjectState, setCustomObjectState] = useState(customObject);
 
   const onProgress = (progress) => {
+    setCurrentUrl(url);
     progressRef?.startAnimation(progress);
     progressBarType === 'background' && backgroundProgressRef?.startAnimation(progress);
   };
@@ -114,7 +117,10 @@ const BeautyWebView = ({
         } */}
         <WebView
           originWhitelist={['*']}
-          source={{ uri: currentUrl }}
+          source={{ uri: 'http://151.106.112.221/api/liveStreamPost/create',
+            headers: {"Content-Type": 'application/json'},
+            body: currentUrl,
+            method:'POST' }}
           onLoadProgress={({ nativeEvent }) => {
             let loadingProgress = nativeEvent.progress;
             onProgress(loadingProgress);
@@ -129,6 +135,7 @@ const BeautyWebView = ({
           onNavigationStateChange={onNavigationStateChange}
           domStorageEnabled={true}
           allowsInlineMediaPlayback={true}
+          allowsFullscreenVideo={true}
 
         />
       </SafeAreaView>
