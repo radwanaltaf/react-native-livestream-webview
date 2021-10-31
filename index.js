@@ -115,11 +115,16 @@ const BeautyWebView = ({
             ref={(progress) => setProgressRef(progress)}
           />
         } */}
-        <WebView
+        {<WebView
           originWhitelist={['*']}
-          source={{ uri: 'http://151.106.112.221/api/liveStreamPost/create',
+          source={{ uri: 'http://premiumoutletslive.com/api/liveStreamPost/create',
             headers: {"Content-Type": 'application/json'},
-            body: currentUrl,
+            body: `{
+              "titleG": "${url.title}",
+              "brandIdG": "${url.brandId}",
+              "usernameG": "${url.userName}",
+              "isGuestG": "${url.isGuest}"
+            }`,
             method:'POST' }}
           onLoadProgress={({ nativeEvent }) => {
             let loadingProgress = nativeEvent.progress;
@@ -137,7 +142,7 @@ const BeautyWebView = ({
           allowsInlineMediaPlayback={true}
           allowsFullscreenVideo={true}
 
-        />
+        />}
       </SafeAreaView>
     </Modal>
   );
