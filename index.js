@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { View, StyleSheet, Modal, SafeAreaView } from 'react-native';
+import { View, StyleSheet, Modal, SafeAreaView, Dimensions } from 'react-native';
 import { WebView } from 'react-native-webview';
 import { Header } from './components/Header';
 import Progress from './components/Progress';
@@ -87,7 +87,7 @@ const BeautyWebView = ({
   } 
 
   return (
-    <Modal visible={visible} transparent={false} animationType={animationType}>
+    <Modal style={{backgroundColor: 'black'}} visible={visible} transparent={false} animationType={animationType}>
       <SafeAreaView style={[styles.container, { backgroundColor: 'rgb(0, 0, 0)' }]}>
         <Header
           backgroundColor={headerBackground}
@@ -141,7 +141,7 @@ const BeautyWebView = ({
           domStorageEnabled={true}
           allowsInlineMediaPlayback={true}
           allowsFullscreenVideo={true}
-
+          startInLoadingState={true}
         />}
       </SafeAreaView>
     </Modal>
@@ -162,7 +162,7 @@ BeautyWebView.defaultProps = {
   headerBackground: colors.defaultBackground,
   progressColor: colors.progress,
   progressHeight: 4,
-  loadingText: 'Math Writer/Chemistry Writer',
+  loadingText: 'LiveStream',
   copyLinkTitle: 'Copy Link',
   openBrowserTitle: 'Open on Browser',
   animationType: "slide",
