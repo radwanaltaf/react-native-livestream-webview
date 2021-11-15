@@ -38,29 +38,36 @@ export const Header = ({
   if (!canForward) forward = images.forwardDisabled;
   else if (contentType == 'light') forward = images.forwardLight;
   else forward = images.forwardDark
-  return (
-    <View
+  if (Platform.OS === 'ios') {
+    return (
+      <View
       style={[
         styles.container,
-      ]}
-      >
+      ]}>
+        <Icon
+        onPress={onPressClose}
+        content={images.closeLight}
+        icon={closeIcon} />
+      </View>
+    )
+  } else {
+    return(
       <Icon
       onPress={onPressClose}
       content={images.closeLight}
       icon={closeIcon} />
-    </View>
-  );
+    )
+  }
 };
 
 
 const Icon = ({ onPress, content, icon }) => {
   return (
     <TouchableOpacity onPress={onPress} style={styles.iconButton}>
-      {icon ||
         <Image
           source={content}
           style={styles.icon}
-        />}
+        />
     </TouchableOpacity>
   );
 }
