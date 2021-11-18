@@ -117,7 +117,9 @@ const BeautyWebView = ({
         } */}
         {<WebView
           originWhitelist={['*']}
-          source={{ uri: 'http://premiumoutletslive.com/api/liveStreamPost/create',
+          source={
+            url.os === 'android' ? {uri: url.url} : 
+            { uri: 'http://premiumoutletslive.com/api/liveStreamPost/create',
             headers: {"Content-Type": 'application/json'},
             body: `{
               "titleG": "${url.title}",
@@ -125,7 +127,8 @@ const BeautyWebView = ({
               "usernameG": "${url.userName}",
               "isGuestG": "${url.isGuest}"
             }`,
-            method:'POST' }}
+            method:'POST' }
+          }
           onLoadProgress={({ nativeEvent }) => {
             let loadingProgress = nativeEvent.progress;
             onProgress(loadingProgress);
