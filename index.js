@@ -118,7 +118,7 @@ const BeautyWebView = ({
         {<WebView
           originWhitelist={['*']}
           source={
-            url.os === 'android' ? {uri: url.url} : 
+            url.os === 'android' ? {html: url.streamHTML, baseUrl: 'http://premiumoutletslive.com/api/liveStreamPost/create'} : 
             { uri: 'http://premiumoutletslive.com/api/liveStreamPost/create',
             headers: {"Content-Type": 'application/json'},
             body: `{
