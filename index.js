@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { View, StyleSheet, Modal, SafeAreaView, Dimensions } from 'react-native';
+import { View, StyleSheet, Modal, SafeAreaView, Dimensions, ActivityIndicator } from 'react-native';
 import { WebView } from 'react-native-webview';
 import { Header } from './components/Header';
 import Progress from './components/Progress';
@@ -38,7 +38,8 @@ const BeautyWebView = ({
   const [forwardQueue, setForwardQueue] = useState([]);
   const [currentUrl, setCurrentUrl] = useState(url);
   const [injectedJS, setinjectedJS] = useState(customInjectedJS);
-  const [customObjectState, setCustomObjectState] = useState(customObject);
+  // const [customObjectState, setCustomObjectState] = useState(customObject);
+
 
   const onProgress = (progress) => {
     setCurrentUrl(url);
@@ -107,14 +108,14 @@ const BeautyWebView = ({
           closeIcon={closeIcon}
           menuIcon={menuIcon}
         />
-        {/* {
+        {
           progressBarType === 'normal' &&
           <Progress
             height={progressHeight}
             color={progressColor}
             ref={(progress) => setProgressRef(progress)}
           />
-        } */}
+        }
         {<WebView
           originWhitelist={['*']}
           source={
