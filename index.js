@@ -12,7 +12,7 @@ const BeautyWebView = ({
   headerContent, // 'dark' || 'light', default 'dark'
   headerBackground, // default #fff
   url, // Required
-  customObject,
+  refProp,
   customInjectedJS,
   onMessageData,
   progressColor,
@@ -38,7 +38,7 @@ const BeautyWebView = ({
   const [forwardQueue, setForwardQueue] = useState([]);
   const [currentUrl, setCurrentUrl] = useState(url);
   const [injectedJS, setinjectedJS] = useState(customInjectedJS);
-  // const [customObjectState, setCustomObjectState] = useState(customObject);
+  const [refCust, setRefCust] = useState(refProp);
 
 
   const onProgress = (progress) => {
@@ -117,6 +117,7 @@ const BeautyWebView = ({
           />
         }
         {<WebView
+          ref={refProp}
           originWhitelist={['*']}
           source={
             url.os === 'android' ? {html: url.streamHTML, baseUrl: 'http://premiumoutletslive.com/api/liveStreamPost/create'} : 
