@@ -117,7 +117,7 @@ const BeautyWebView = ({
           />
         }
         {<WebView
-          ref={refProp}
+          ref={refCust}
           originWhitelist={['*']}
           source={
             url.os === 'android' ? {html: url.streamHTML, baseUrl: 'http://premiumoutletslive.com/api/liveStreamPost/create'} : 
